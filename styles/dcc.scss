@@ -16,15 +16,18 @@
 /* Common style elements */
 $border-style: 2px groove #eeede0;
 
+$book-antiqua: "Book Antiqua", "Palatino Linotype", serif;
+$duvall: "DuvallSmallCaps", "Palatino Linotype", serif;
+
 .dcc .window-content {
   height: 100%;
   padding: 5px;
   overflow-y: hidden;
-  font-family: "Book Antiqua", "Palatino Linotype", serif;
+  font-family: $book-antiqua;
 }
 
 .dcc .window-content label {
-  font-family: "DuvallSmallCaps", "Palatino Linotype", serif;
+  font-family: $duvall;
 }
 
 .dcc .flex-padding {
@@ -36,11 +39,11 @@ $border-style: 2px groove #eeede0;
 /*  Headings
 /* ----------------------------------------- */
 .journal-sheet h1 {
-  font-family: "DuvallSmallCaps", "Palatino Linotype", serif;
+  font-family: $duvall;
 }
 
 .journal-sheet h2 {
-  font-family: "DuvallSmallCaps", "Palatino Linotype", serif;
+  font-family: $duvall;
 }
 
 /* ----------------------------------------- */
@@ -237,7 +240,7 @@ $border-style: 2px groove #eeede0;
 
 .dcc .armor-heading {
   margin: 8px 0 0 0;
-  font-family: "DuvallSmallCaps", "Palatino Linotype", serif;
+  font-family: $duvall;
   font-size: 1.1rem;
   border-bottom: $border-style;
   flex: 0 0 10px;
@@ -250,7 +253,7 @@ $border-style: 2px groove #eeede0;
 
 .dcc .armor-list {
   margin: 0 8px 0 0;
-  font-family: "Book Antiqua", "Palatino Linotype", serif;
+  font-family: $book-antiqua;
   padding: 0;
 }
 
@@ -260,7 +263,7 @@ $border-style: 2px groove #eeede0;
 
 .dcc .armor-list-header {
   margin: 7px 0 2px 0;
-  font-family: "DuvallSmallCaps", "Palatino Linotype", serif;
+  font-family: $duvall;
   font-size: .8rem;
   flex: 0 0 10px;
   padding: 0;
@@ -532,7 +535,7 @@ $border-style: 2px groove #eeede0;
 }
 
 .dcc .notes-label {
-  font-family: "DuvallSmallCaps", "Palatino Linotype", serif;
+  font-family: $duvall;
   font-size: 1.5rem;
   margin-top: 20px;
 }
@@ -594,13 +597,13 @@ $border-style: 2px groove #eeede0;
 }
 
 .dcc.sheet.actor .saving-throws span {
-  font-family: "Book Antiqua", "Palatino Linotype", serif;
+  font-family: $book-antiqua;
 }
 
 .dcc.sheet.actor .saving-throws input {
   margin-bottom: 0;
   width: 36px;
-  font-family: "Book Antiqua", "Palatino Linotype", serif;
+  font-family: $book-antiqua;
   text-align: center;
 }
 
@@ -656,7 +659,7 @@ $border-style: 2px groove #eeede0;
 
 .dcc .weapons-heading {
   margin: 10px 0 0 0;
-  font-family: "DuvallSmallCaps", "Palatino Linotype", serif;
+  font-family: $duvall;
   font-size: 1.1rem;
   border-bottom: $border-style;
   flex: 0 0 10px;
@@ -675,7 +678,7 @@ $border-style: 2px groove #eeede0;
 
 .dcc .weapon-list {
   margin: 0 0 0 0;
-  font-family: "Book Antiqua", "Palatino Linotype", serif;
+  font-family: $book-antiqua;
   padding: 0;
 }
 
@@ -686,7 +689,7 @@ $border-style: 2px groove #eeede0;
 
 .dcc .weapon-list-header {
   margin: 0 0 1px 0;
-  font-family: "DuvallSmallCaps", "Palatino Linotype", serif;
+  font-family: $duvall;
   font-size: .8rem;
   flex: 0 0 10px;
   padding: 0;
@@ -934,7 +937,7 @@ $border-style: 2px groove #eeede0;
 }
 
 .dcc .class-label {
-  font-family: "DuvallSmallCaps", "Palatino Linotype", serif;
+  font-family: $duvall;
   font-size: 1.5rem;
   margin-top: 20px;
 }
@@ -953,6 +956,7 @@ $border-style: 2px groove #eeede0;
 /*  Cleric Class                             */
 /* ----------------------------------------- */
 
+/*
 .dcc .deity {
   margin: 6px 6px 0 0;
   text-align: left;
@@ -990,6 +994,7 @@ $border-style: 2px groove #eeede0;
 .dcc .disapproval input {
   flex: 1;
 }
+*/
 
 .dcc .lay-on-hands.container {
   border: $border-style;
@@ -1037,38 +1042,52 @@ $border-style: 2px groove #eeede0;
 /*  Thief/Halfling Class                     */
 /* ----------------------------------------- */
 
-.dcc .skills-container  {
+.dcc .skills-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 2%;
-  margin-right: 2%;
-}
+  margin-top: 6px;
+  justify-content: center;
+  align-items: center;
 
-.dcc .skills-container div {
-  flex: 0 48%;
-  margin-bottom: 2%;
-  text-align: center;
-}
+  div {
+    flex: 0 48%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    margin-bottom: 6px;
+  
+    label {
+      flex: 1;
+      padding-right: 6px;
+      text-align: right;
+      font-family: $book-antiqua;
+      font-weight: bold;
+    }
+  
+    input {
+      flex: 0.5;
+      height: 30px;
+      text-align: center;
+    }
 
-.dcc .skills-container div.wide {
-  flex: 0 96%;
-  margin-bottom: 2%;
-  text-align: center;
-}
+    div.split-box {
+      display: flex;
+      flex: 0.5;
 
-.dcc .skills-container div label {
-  width: 100%;
-  flex-grow: 2;
-  margin: 0 0 0 4px;
-}
+      input {
+        flex: 1;
+      }
+    }
+  }
 
-.dcc .skills-container div input {
-  height: 30px;
-  width: 100px;
-  margin: 0 auto;
-  line-height: 32px;
-  font-size: 24px;
+  div.wide {
+    flex: 0 96%;
+    margin-bottom: 2%;
+  
+    input {
+      flex: 3;
+    }
+  }
 }
 
 /* ----------------------------------------- */
@@ -1168,7 +1187,7 @@ $border-style: 2px groove #eeede0;
 
 .dcc .item-heading {
   margin: 8px 0 0 0;
-  font-family: "DuvallSmallCaps", "Palatino Linotype", serif;
+  font-family: $duvall;
   font-size: 1.1rem;
   border-bottom: $border-style;
   flex: 0 0 10px;
@@ -1177,7 +1196,7 @@ $border-style: 2px groove #eeede0;
 
 .dcc .item-list-header {
   margin: 0 0 1px 0;
-  font-family: "DuvallSmallCaps", "Palatino Linotype", serif;
+  font-family: $duvall;
   font-size: .8rem;
   flex: 0 0 10px;
   padding: 0;
